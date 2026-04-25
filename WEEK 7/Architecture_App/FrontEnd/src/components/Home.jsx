@@ -1,8 +1,10 @@
 import React from 'react'
-
+import { pageTitleClass } from '../styles/common'
 function Home() {
   return (
-    <div>Home</div>
+    <div>
+      <h1 className={pageTitleClass}>Article Blog Page</h1>
+    </div>
   )
 }
 
