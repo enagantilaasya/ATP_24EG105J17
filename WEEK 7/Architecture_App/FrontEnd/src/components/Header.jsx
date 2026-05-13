@@ -1,22 +1,12 @@
 import { NavLink } from "react-router";
-import { useAuth } from "../store/authStore";
-import {
-  navbarClass,
-  navContainerClass,
-  navBrandClass,
-  navLinksClass,
-  navLinkClass,
-  navLinkActiveClass,
-} from "../styles/common";
-
+import { useAuth } from "../stores/authStore";
+import blog from "./blog.png"
 function Header() {
   const isAuthenticated = useAuth((state) => state.isAuthenticated);
   const user = useAuth((state) => state.currentUser);
 
-  // decide profile route based on role
   const getProfilePath = () => {
     if (!user) return "/";
-
     switch (user.role) {
       case "AUTHOR":
         return "/author-profile";
@@ -28,15 +18,25 @@ function Header() {
   };
 
   return (
-    <nav className={navbarClass}>
-      <div className={navContainerClass}>
-
+    <nav className="bg-white shadow-md sticky top-0 z-50">
+      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="flex justify-around">
         {/* LOGO */}
-        <NavLink to="/" className={navBrandClass}>
-          MyBlog
+        <img
+                  src={blog}
+                  alt="img not available"
+                  className="text-2xl font-bold text-indigo-600 size-11 rounded-2xl"
+                />
+        <NavLink
+          to="/"
+          className="text-2xl font-bold text-indigo-600 tracking-wide pl-4 "
+        >
+            MyBlog
         </NavLink>
-
-        <ul className={navLinksClass}>
+        
+        </div>
+        {/* NAV LINKS */}
+        <ul className="flex items-center gap-6 text-sm font-medium">
 
           {/* HOME */}
           <li>
@@ -44,7 +44,9 @@ function Header() {
               to="/"
               end
               className={({ isActive }) =>
-                isActive ? navLinkActiveClass : navLinkClass
+                isActive
+                  ? "text-indigo-600 border-b-2 border-indigo-600 pb-1"
+                  : "text-gray-600 hover:text-indigo-600 transition"
               }
             >
               Home
@@ -58,7 +60,9 @@ function Header() {
                 <NavLink
                   to="/register"
                   className={({ isActive }) =>
-                    isActive ? navLinkActiveClass : navLinkClass
+                    isActive
+                      ? "text-indigo-600 border-b-2 border-indigo-600 pb-1"
+                      : "text-gray-600 hover:text-indigo-600 transition"
                   }
                 >
                   Register
@@ -68,9 +72,7 @@ function Header() {
               <li>
                 <NavLink
                   to="/login"
-                  className={({ isActive }) =>
-                    isActive ? navLinkActiveClass : navLinkClass
-                  }
+                  className="bg-indigo-600 text-white px-4 py-1.5 rounded-full hover:bg-indigo-700 transition"
                 >
                   Login
                 </NavLink>
@@ -80,18 +82,29 @@ function Header() {
 
           {/* LOGGED IN */}
           {isAuthenticated && (
-            <li>
+            <li className="flex items-center gap-3">
+
+              {/* Profile Image */}
+              {user?.profileImageUrl ? (
+                <img
+                  src={user.profileImageUrl}
+                  alt="profile"
+                  className="w-8 h-8 rounded-full object-cover border"
+                />
+              ) : (
+                <div className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-sm font-semibold">
+                  {user?.firstName?.charAt(0)?.toUpperCase()}
+                </div>
+              )}
+
               <NavLink
                 to={getProfilePath()}
-                className={({ isActive }) =>
-                  isActive ? navLinkActiveClass : navLinkClass
-                }
+                className="text-gray-700 hover:text-indigo-600 transition"
               >
-                Profile
+                {user?.firstName || "Profile"}
               </NavLink>
             </li>
           )}
-
         </ul>
       </div>
     </nav>
