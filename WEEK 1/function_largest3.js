@@ -1,4 +1,4 @@
-//write a funtion that recevies 3 numbers args and return the big number
+//function to find the largest
 let findLargest=function(a,b,c)
 {
     let large=0;
@@ -22,6 +22,8 @@ let findLargest=function(a,b,c)
     }
     return large;
 }
+// Function call with 3 numbers
 let result=findLargest(100,20,98)
+//Displaay the result
 console.log(`The largest number is ${result}`)
 console.log("largest number :",result)

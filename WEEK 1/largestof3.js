@@ -1,4 +1,6 @@
+//Declare 3 Number
 let a=90,b=95,c=86
+//If Statement to find the Largest of 3
 if(a>b)
 {
     if(a>c)

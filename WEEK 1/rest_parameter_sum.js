@@ -1,4 +1,4 @@
-//write a function that receives anu no of args and return their sum
+//function that receives no of args and return their sum
 function findSum(...a)
 {
     let sum=0;
@@ -8,7 +8,9 @@ function findSum(...a)
     }
     return sum;
 }
+//Function Call
 let sum=findSum(10,20,30,40,50)
+//Display the Sum
 console.log("The sum is : ",sum)
 /*
 const findSum=(...numbers)=.{
