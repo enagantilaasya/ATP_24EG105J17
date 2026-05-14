@@ -1,8 +1,3 @@
-/*
-1.Insert new Emp at 2nd position,
-2.Remove an emp with name "Kiran",
-3.Change the last mark 95 to 75 of emp  "Sneha"
-*/
 const employees = 
 [
   {
@@ -32,8 +27,11 @@ const employees =
   }
 ];
 employees.splice(1,0,{eno:2,name:'laasya',marks:[90,88,78]})
+//Insert new Emp at 2nd position,
 console.log(employees)
 employees.splice(4,1)
+//Remove an emp with name "Kiran",
 console.log(employees)
 employees[3].marks.splice(2,1,75)
+//Change the last mark 95 to 75 of emp  "Sneha"
 console.log(employees)
