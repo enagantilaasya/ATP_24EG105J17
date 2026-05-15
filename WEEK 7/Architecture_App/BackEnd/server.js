@@ -13,7 +13,6 @@ const app = exp();
 //enable cors
 app.use(cors({
   origin: ["http://localhost:5173", 
-    "https://architecture-app-coral.vercel.app",
     "https://blog-app1-green.vercel.app"],
   credentials: true
 }))
