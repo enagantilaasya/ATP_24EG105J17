@@ -33,7 +33,8 @@ export const useAuth = create((set) => ({
         loading: false,
         isAuthenticated: false,
         currentUser: null,
-        error: err.response?.data?.message || "Login failed",      });
+        error: err.response?.data?.error || "Login failed",
+      });
     }
   },
 
@@ -59,7 +60,7 @@ export const useAuth = create((set) => ({
         loading: false,
         isAuthenticated: false,
         currentUser: null,
-        error: err.response?.data?.message || "Logout failed",
+        error: err.response?.data?.error || "Logout failed",
       });
     }
   },

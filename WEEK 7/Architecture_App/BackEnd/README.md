@@ -1,5 +1,5 @@
-1. Generate package.json
-2. Create .env file
+1.Generate package.json
+2.Create .env file
 3. Create express app and assign port number
 4. Connect to db
 5. Define schemas and create Models

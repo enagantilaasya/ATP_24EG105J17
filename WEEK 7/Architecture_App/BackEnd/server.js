@@ -11,21 +11,10 @@ config();
 //create express app
 const app = exp();
 //enable cors
-const corsOptions = {
-  origin: [
-    "http://localhost:5173",
-    "https://architecture-app-coral.vercel.app",
-    "https://blog-app1-green.vercel.app"
-  ],
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"]
-};
-
-app.use(cors(corsOptions));
-
-// Handle preflight requests
-app.options("*", cors(corsOptions));
+app.use(cors({
+  origin: ["http://localhost:5173", "https://architecture-app-coral.vercel.app", ],
+  credentials: true
+}))
 //add cookie parser middeleware
 app.use(cookieParser())
 //body parser middleware
