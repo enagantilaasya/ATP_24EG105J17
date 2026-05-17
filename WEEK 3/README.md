@@ -12,3 +12,35 @@ Create\
 Read\
 Update\
 Delete
+#### Technologies Used
+Node.js\
+Express.js\
+MongoDB\
+Mongoose\
+JWT\
+bcryptjs\
+Cookie Parser Middleware
+### Project Structure
+project/\
+│\
+├── APIs/\
+│   ├── UserApi.js\
+│   └── ProductApi.js\
+│\
+├── models/\
+│   ├── UserModel.js\
+│   └── ProductModel.js\
+│\
+├── middlewares/\
+│   └── verifyToken.js\
+│\
+├── auth.js\
+├── server.js\
+├── package.json\
+└── README.md
+### How to Run the Project
+Step 1: Install Dependencies(Technologies)\
+Step 2: Run The Program\
+nodemon Server.js\
+the server on:\
+http://localhost:8903
