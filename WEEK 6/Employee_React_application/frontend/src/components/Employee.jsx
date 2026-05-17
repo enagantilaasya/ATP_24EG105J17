@@ -5,12 +5,12 @@ function Employee() {
   const { state } = useLocation();
 
   return (
-    <div className="p-16 text-center text-3xl">
-      <p>{state.name}</p>
-      <p>{state.email}</p>
-      <p>{state.mobile}</p>
-      <p>{state.designation}</p>
-      <p>{state.companyName}</p>
+    <div className="p-16 text-center text-3xl shadow-2xl ml-50 mr-50">
+      <p>Name: {state.name}</p>
+       <p>Email: {state.email}</p>
+       <p>Mobile No: {state.mobile}</p>
+       <p>Designation: {state.designation}</p>
+      <p>Company Name: {state.companyName}</p>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useNavigate } from "react-router";
-
+const BaseUrl=import.meta.env.Vite_Url || "https://employee-web-5b44.onrender.com";
 function CreateEmp() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -18,7 +18,7 @@ function CreateEmp() {
     try {
       setLoading(true);
       //make HTTP POST req
-      let res = await fetch("http://localhost:4000/emp-api/employees", {
+      let res = await fetch(`${BaseUrl}/emp-api/employees`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newEmpObj),
@@ -51,40 +51,40 @@ function CreateEmp() {
   }
 
   return (
-    <div>
-      <h1 className="text-5xl text-center text-gray-600">Create New Employee</h1>
+    <div className="ml-65 mr-65 shadow-teal-600 shadow-2xl rounded-2xl p-3 hover:scale-105">
+      <h1 className="text-5xl text-center text-gray-600  ">Create New Employee</h1>
       {/* form */}
       <form className=" max-w-md mx-auto mt-10" onSubmit={handleSubmit(onFormSubmit)}>
         <input
           type="text"
           placeholder="Enter name "
           {...register("name")}
-          className="mb-3 p-3 w-full rounded-2xl"
+          className="mb-3 p-3 w-full rounded-2xl border-2"
         />
         <input
           type="email"
           placeholder="Enter Email "
           {...register("email")}
-          className="mb-3 p-3 w-full rounded-2xl"
+          className="mb-3 p-3 w-full rounded-2xl border-2"
         />
 
         <input
           type="number"
           placeholder="Enter mobile number"
           {...register("mobile")}
-          className="mb-3 p-3 w-full rounded-2xl"
+          className="mb-3 p-3 w-full rounded-2xl border-2"
         />
         <input
           type="text"
           placeholder="Enter designation"
           {...register("designation")}
-          className="mb-3  p-3 w-full rounded-2xl"
+          className="mb-3  p-3 w-full rounded-2xl border-2"
         />
         <input
           type="text"
           placeholder="Enter name of the company"
           {...register("companyName")}
-          className="mb-3 p-3 w-full rounded-2xl"
+          className="mb-3 p-3 w-full rounded-2xl border-2"
         />
 
         <button type="submit" className="text-2xl rounded-2xl bg-gray-600 text-white block mx-auto p-4">

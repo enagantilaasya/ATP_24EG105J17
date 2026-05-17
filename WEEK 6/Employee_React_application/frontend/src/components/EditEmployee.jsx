@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router";
 import { useEffect } from "react";
 import axios from "axios";
-
+const BaseUrl=import.meta.env.Vite_Url || "https://employee-web-5b44.onrender.com";
 function EditEmployee() {
   const {
     register,
@@ -28,7 +28,7 @@ function EditEmployee() {
   const saveModifiedEmp = async (modifiedEmp) => {
     // console.log(modifiedEmp);
     //make HTTP PUT req
-    const res = await axios.put(`http://localhost:4000/emp-api/employees/${state._id}`, modifiedEmp);
+    const res = await axios.put(`${BaseUrl}/emp-api/employees/${state._id}`, modifiedEmp);
     if (res.status === 200) {
       //navigate to ListOfEMps
       navigate("/list");
@@ -36,40 +36,40 @@ function EditEmployee() {
   };
 
   return (
-    <div>
-      <h1 className="text-5xl text-center text-yellow-600">Edit Employee</h1>
+    <div className="ml-65 mr-65 shadow-teal-600 shadow-2xl rounded-2xl p-3 hover:scale-105">
+      <h1 className="text-5xl text-center text-gray-400">Edit Employee</h1>
       {/* form */}
       <form className=" max-w-md mx-auto mt-10" onSubmit={handleSubmit(saveModifiedEmp)}>
         <input
           type="text"
           placeholder="Enter name "
           {...register("name")}
-          className="mb-3  p-3 w-full rounded-2xl"
+          className="mb-3  p-3 w-full rounded-2xl border-blue-200 border-2"
         />
         <input
           type="email"
           placeholder="Enter Email "
           {...register("email")}
-          className="mb-3  p-3 w-full rounded-2xl"
+          className="mb-3  p-3 w-full rounded-2xl border-blue-200 border-2"
         />
 
         <input
           type="number"
           placeholder="Enter mobile number"
           {...register("mobile")}
-          className="mb-3 p-3 w-full rounded-2xl"
+          className="mb-3 p-3 w-full rounded-2xl border-blue-200 border-2"
         />
         <input
           type="text"
           placeholder="Enter designation"
           {...register("designation")}
-          className="mb-3 p-3 w-full rounded-2xl"
+          className="mb-3 p-3 w-full rounded-2xl border-blue-200 border-2"
         />
         <input
           type="text"
           placeholder="Enter name of the company"
           {...register("companyName")}
-          className="mb-3 borde-2 p-3 w-full rounded-2xl"
+          className="mb-3 borde-2 p-3 w-full rounded-2xl border-blue-200 border-2"
         />
 
         <button type="submit" className="text-2xl rounded-2xl bg-green-800 text-white block mx-auto p-4">
