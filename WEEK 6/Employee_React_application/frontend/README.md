@@ -1,16 +1,64 @@
-# React + Vite
+# FrontEnd Overview
+## Technologies Used
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- React JS
+- Vite
+- React Router DOM
+- CSS3
+- JavaScript (ES6)
 
-Currently, two official plugins are available:
+## Frontend Project Structure
+frontend\
+│\
+├── public\
+│\
+├── src\
+│   ├── assets\
+│   │\
+│   ├── components\
+│   │   ├── CreateEmp.jsx\
+│   │   ├── EditEmployee.jsx\
+│   │   ├── Employee.jsx\
+│   │   ├── Header.jsx\
+│   │   ├── Home.jsx\
+│   │   ├── ListOfEmps.jsx\
+│   │   └── RootLayout.jsx\
+│   │\
+|   ├──.env\
+│   ├── App.css\
+│   ├── App.jsx\
+│   ├── index.css\
+│   └── main.jsx\
+│\
+├── .gitignore\
+├── eslint.config.js\
+├── index.html\
+├── package.json\
+├── package-lock.json\
+├── vite.config.js\
+└── README.md
+## Installation Steps
+### Step 1: Install Dependencies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install react-router-dom axios
+```
+### Step 3: Start Development Server
+```bash
+npm run dev
+```
+### To Deploy
+#### Use Vercel To Deploy Frontend
+``` bash
+Step 1 : Login to Render Webiste (https://vercel.com/)
+Step 2 : Click on ADD New
+Step 3 : Click on Project
+Step 4 : Connect your Git To it and select The file
+Step 5 :  Root Directiory : Frontend File
+Step 6 : Add Environment Variables
+-Vite_Url=your_backend_url(Deployed Render link)
+Step 7 : Deploy
+```
+### After Deployment connect the frontend link in backend server.js at cors and redeploy the backend in render then frontend 
+To access the data and backend we connect
+### Deployment Link : https://employee-web-pi.vercel.app/
