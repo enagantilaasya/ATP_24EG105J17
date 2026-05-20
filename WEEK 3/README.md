@@ -1,7 +1,33 @@
-## OVERVIEW
-### Topics Covered In This Directory
-Backend REST API Project\
-This project is a Backend API application built using Express.js, MongoDB, and Mongoose.
+# OVERVIEW
+
+## Topics Covered In This Directory
+
+### Backend REST API Project
+A Backend REST API Project is an application that handles data processing, storage, and communication between the client and the server through APIs. It follows REST (Representational State Transfer) principles to perform operations like creating, reading, updating, and deleting data.
+
+### Express.js
+Express.js is a lightweight and fast web framework for Node.js used to build web servers and APIs. It simplifies routing, middleware handling, and server-side development.
+
+### MongoDB
+MongoDB is a NoSQL database that stores data in flexible JSON-like documents. It is widely used for handling large amounts of unstructured or semi-structured data.
+
+### Mongoose
+Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js. It provides schemas, validation, and easier interaction with MongoDB databases.
+
+### REST API
+REST API is a set of rules that allows applications to communicate over HTTP using methods such as `GET`, `POST`, `PUT`, and `DELETE`.
+
+### CRUD Operations
+CRUD stands for Create, Read, Update, and Delete. These are the basic operations performed in database-driven applications.
+
+### Routing
+Routing is the process of defining application endpoints and handling client requests based on URLs and HTTP methods.
+
+### Middleware
+Middleware functions are functions that execute during the request-response cycle in Express.js. They are used for tasks like authentication, validation, logging, and error handling.
+
+### Database Connection
+Database connection refers to establishing communication between the backend server and the database to store and retrieve data.
 #### It provides REST APIs for:
 User Management\
 Product Management\
