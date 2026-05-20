@@ -1,3 +1,15 @@
+## Blog App Roles
+User: Reads the blogs\
+    - Adds comments\
+    - Cannot the edit,add or delete the articles\
+Author: Creates Blog\
+    - Edit Its Own Blogs\
+    - Inactive Its Own Blogs\
+Admin: Manage all users\
+    - Delete any blog\
+    - Block users/authors\
+    - Full website control\
+
 ## Backend OverView
 This project is the backend structure of a Blog Application developed using:
 
